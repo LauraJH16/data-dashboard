@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Data Dashboard</title>
 </head>
 
@@ -10,72 +12,70 @@
 
   <header>
     <section id='first-section'>
-      <ul>
-        <li>
-          <select name="select-lenguage" id="select-lenguage">
-            <option value="spanish">Español</option>
-            <option value="english">Ingles</option>
-          </select>
-        </li>
-        <li>
-          <img src="assets/images/logo-laboratoria.svg" alt="logo-laboratoria">
-        </li>
-        <li>
-          <div id='menu'></div>
-        </li>
-      </ul>
+      <select name="select-lenguage" id="select-lenguage">
+        <option value="spanish">Español</option>
+        <option value="english">Ingles</option>
+      </select>
+      <img src="assets/images/logo-laboratoria.svg" alt="logo-laboratoria">
+      <div id='menu'>menu</div>
     </section>
     <section id="second-section">
-      <ul>
-        <li>
-          <button>sede</button>
-        </li>
-        <li>
-          <div>
-            <p></p>
-          </div>
-        </li>
-      </ul>
-    </section>
-    <section id="third-section">
+      <div id='box-sede'>
+        <div id="sede">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          SEDE
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </div>
+        <div class='sede-title'>
+          <p> Arequipa - 2015 - 1 generación</p>
+        </div>
+      </div>
       <nav>
         <ul>
-          <li>General</li>
-          <li>Estudiantes</li>
-          <li>Profesores</li>
+          <li>
+            <div>General</div>
+          </li>
+          <li>
+            <div>Estudiantes</div>
+          </li>
+          <li>
+            <div>Profesores</div>
+          </li>
         </ul>
       </nav>
     </section>
   </header>
   <main>
     <section>
-      <div>
+        <h2>Estado</h2>
+        <img src="assets/images/bar-graph.png" alt="">
+      <div class="box">
         <p>Activas</p>
         <p>90</p>
       </div>
-      <div>
+      <div class="box">
         <p>Desertoras</p>
         <p>10</p>
       </div>
     </section>
     <section>
       <img src="assets/images/bar-graph.png" alt="">
-      <div>
+      <div class="box">
         <p>Tecnico</p>
         <p>90</p>
       </div>
-      <div>
+      <div class="box">
         <p>HSE</p>
         <p>10</p>
       </div>
     </section>
     <section>
       <img src="assets/images/bar-graph.png" alt="">
-      <div>
+      <div class="box">
         <p>78%</p>
         <p>cumulative</p>
       </div>
-      <div>
+      <div class="box">
         <p>promoters : 81</p>
         <p>passive: 10</p>
         <p>detractors: 9</p>
@@ -90,7 +90,7 @@
         <option value="sprint-4">Sprint 4</option>
       </select>
       <img src="assets/images/bar-graph.png" alt="">
-      <div>
+      <div class="box">
         <p>HSE</p>
         <p>90</p>
       </div>
@@ -104,7 +104,7 @@
         <option value="sprint-4">Sprint 4</option>
       </select>
       <img src="assets/images/bar-graph.png" alt="">
-      <div>
+      <div class="box">
         <p>Tecnico</p>
         <p>90</p>
       </div>
@@ -112,20 +112,20 @@
     <section>
       <img src="assets/images/bar-graph.png" alt="">
       <div>
-        <p>Teacher</p>
+        <p class="box">Teacher</p>
         <p>90</p>
       </div>
     </section>
     <section>
       <img src="assets/images/bar-graph.png" alt="">
-      <div>
+      <div class="box">
         <p>Experiencia</p>
         <p>90</p>
       </div>
     </section>
     <section>
       <img src="assets/images/bar-graph.png" alt="">
-      <div>
+      <div class="box">
         <p>Jedi</p>
         <p>90</p>
       </div>
