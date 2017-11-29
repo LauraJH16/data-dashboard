@@ -22,9 +22,22 @@
     <section id="second-section">
       <div id='box-sede'>
         <div id="sede">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <a class = 'sede'href=""><i class="fa fa-map-marker" aria-hidden="true"></i>
           SEDE
-          <i class="fa fa-angle-down" aria-hidden="true"></i>
+          <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <ul class='menu-sedes'>
+						<li><a href="" value='AQP'>Arequipa</a></li>
+						<li><a href="" value='LIM'>Lima</a></li>
+						<li><a href="">Chle</a></li>
+						<li><a href="">Submenu4</a>
+							<ul class="submenu-generation">
+								<li><a href="">Submenu1</a></li>
+								<li><a href="">Submenu2</a></li>
+								<li><a href="">Submenu3</a></li>
+								<li><a href="">Submenu4</a></li>
+							</ul>
+						</li>
+					</ul>
         </div>
         <div class='sede-title'>
           <p> Arequipa - 2015 - 1 generación</p>
@@ -33,13 +46,13 @@
       <nav>
         <ul>
           <li>
-            <div>General</div>
+            <div id='general' class="show">General</div>
           </li>
           <li>
-            <div>Estudiantes</div>
+            <div id='estudiantes' class=''>Estudiantes</div>
           </li>
           <li>
-            <div>Profesores</div>
+            <div id='profesores' class=''>Profesores</div>
           </li>
         </ul>
       </nav>
@@ -50,11 +63,11 @@
         <h2>Estado</h2>
         <img src="assets/images/bar-graph.png" alt="">
       <div class="box">
-        <p>Activas</p>
+        <p id='activas'>Activas</p>
         <p>90</p>
       </div>
       <div class="box">
-        <p>Desertoras</p>
+        <p id='desertoras'>Desertoras</p>
         <p>10</p>
       </div>
     </section>
