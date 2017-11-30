@@ -17,24 +17,50 @@
         <option value="english">Ingles</option>
       </select>
       <img src="assets/images/logo-laboratoria.svg" alt="logo-laboratoria">
-      <div id='menu'>menu</div>
+      <div id="sidebar">
+        <ul>
+          <li><img src="assets/images/user.png" alt="user-img"><p>User</p></li>
+          <li>Add Estudiante</li>
+          <li>Remove Estudiante</li>
+          <li>Add Sprint</li>
+        </ul>
+      </div>
+      <div id="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </section>
     <section id="second-section">
-      <div id='box-sede'>
         <div id="sede">
           <a class = 'sede'href=""><i class="fa fa-map-marker" aria-hidden="true"></i>
           SEDE
           <i class="fa fa-angle-down" aria-hidden="true"></i></a>
           <ul class='menu-sedes'>
-						<li><a href="" value='AQP'>Arequipa</a></li>
-						<li><a href="" value='LIM'>Lima</a></li>
-						<li><a href="">Chle</a></li>
-						<li><a href="">Submenu4</a>
+            <li><a href="" value='AQP'>Arequipa</a>
+              <ul class="submenu-generation">
+                  <li><a href="">2016-2</a></li>
+                  <li><a href="">2017-1</a></li>
+                </ul>
+            </li>
+            <li><a href="" value='LIM'>Lima</a>
+              <ul class="submenu-generation">
+                  <li><a href="">2016-2</a></li>
+                  <li><a href="">2017-1</a></li>
+                  <li><a href="">2017-2</a></li>
+                </ul>
+            </li>
+            <li><a href="" value='SCL'>Santiago de Chile</a>
+              <ul class="submenu-generation">
+                  <li><a href="">2016-2</a></li>
+                  <li><a href="">2017-1</a></li>
+                  <li><a href="">2017-2</a></li>
+                </ul>
+            </li>
+						<li><a href="" value='CDMX'>Mexico D.F</a>
 							<ul class="submenu-generation">
-								<li><a href="">Submenu1</a></li>
-								<li><a href="">Submenu2</a></li>
-								<li><a href="">Submenu3</a></li>
-								<li><a href="">Submenu4</a></li>
+                  <li><a href="">2017-1</a></li>
+                  <li><a href="">2017-2</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -42,7 +68,6 @@
         <div class='sede-title'>
           <p> Arequipa - 2015 - 1 generación</p>
         </div>
-      </div>
       <nav>
         <ul>
           <li>
@@ -63,35 +88,36 @@
         <h2>Estado</h2>
         <img src="assets/images/bar-graph.png" alt="">
       <div class="box">
-        <p id='activas'>Activas</p>
-        <p>90</p>
+        <p>Activas</p>
+        <p id='activas'>7</p>
       </div>
       <div class="box">
-        <p id='desertoras'>Desertoras</p>
-        <p>10</p>
+        <p>Desertoras</p>
+        <p id='desertoras'>53.3%</p>
+      </div>
+    </section>
+    <section>
+        <h2>Meta</h2>
+      <img src="assets/images/bar-graph.png" alt="">
+      <div class="box">
+        <p>#Yes</p>
+        <p id='goals'>7</p>
+      </div>
+      <div class="box">
+        <p>%Yes</p>
+        <p id='goalsPorc'>46.7%</p>
       </div>
     </section>
     <section>
       <img src="assets/images/bar-graph.png" alt="">
       <div class="box">
-        <p>Tecnico</p>
-        <p>90</p>
-      </div>
-      <div class="box">
-        <p>HSE</p>
-        <p>10</p>
-      </div>
-    </section>
-    <section>
-      <img src="assets/images/bar-graph.png" alt="">
-      <div class="box">
-        <p>78%</p>
+        <p id="prom-nps">64.8%</p>
         <p>cumulative</p>
       </div>
       <div class="box">
-        <p>promoters : 81</p>
-        <p>passive: 10</p>
-        <p>detractors: 9</p>
+        <p id="promoter">promoters: 75.0%</p>
+        <p id="passive">passive: 14.8%</p>
+        <p id="detractor">detractors: 10.3%</p>
       </div>
     </section>
     <section>
@@ -105,8 +131,12 @@
       <img src="assets/images/bar-graph.png" alt="">
       <div class="box">
         <p>HSE</p>
-        <p>90</p>
+        <p id="skills-hse">5</p>
       </div>
+      <div class="box">
+          <p>HSE%</p>
+          <p id="hse-percent">33.3%</p>
+        </div>
     </section>
     <section>
       <h2>Tecnico</h2>
@@ -119,28 +149,32 @@
       <img src="assets/images/bar-graph.png" alt="">
       <div class="box">
         <p>Tecnico</p>
-        <p>90</p>
+        <p id='skills-tech'>4</p>
       </div>
+      <div class="box">
+          <p>Tecnico%</p>
+          <p id="tech-percent">26.7%</p>
+        </div>
     </section>
     <section>
       <img src="assets/images/bar-graph.png" alt="">
-      <div>
-        <p class="box">Teacher</p>
-        <p>90</p>
+      <div class="box">
+        <p>Expectativa</p>
+        <p id="satisfaction-percent">87.8%</p>
       </div>
     </section>
     <section>
       <img src="assets/images/bar-graph.png" alt="">
       <div class="box">
-        <p>Experiencia</p>
-        <p>90</p>
+        <p>Teacher</p>
+        <p id="teacher">3.6</p>
       </div>
     </section>
     <section>
       <img src="assets/images/bar-graph.png" alt="">
       <div class="box">
         <p>Jedi</p>
-        <p>90</p>
+        <p id="jedi">4.0</p>
       </div>
     </section>
   </main>
