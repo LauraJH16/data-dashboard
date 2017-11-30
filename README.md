@@ -1,25 +1,24 @@
 # Data Dashboard
 
-* **Track:** _Common Core_
-* **Curso:** _Creando tu primer sitio web interactivo_
+* **Tema:** _Creando tu primer sitio web interactivo_
 * **Unidad:** _Producto final_
+* **Alumnas:** _Laura Jimenes y Gloria Ramos_
 
-***
+**Herramientas a utilizar:**  
+* css
+* JavaScript
+* html
+* Assets
+* Data
+* Visual Studio Code
 
-## Flujo de trabajo
+**Descripción del trabajo:**
+- Nos entregaron una data de Laboratoria, y nos pidieron poder realizar con toda la información dada una intranet donde los profesores, training manager y directores puedan visualiza los datos estadisticos de lo que pasa en cada sede de Laboratoria, y a la vez de todas las promociones hasta el día de hoy.
 
-1. Debes realizar un [**fork**](https://gist.github.com/ivandevp/1de47ae69a5e139a6622d78c882e1f74)
-   de este repositorio.
+- Se tuvo que investigar como enlazar data , para que el servidor lo lea y jale los datos correspondientes a cada rubro solicitado.
 
-2. Luego deberás **clonar** tu fork en tu máquina. Recuerda que el comando a usar
-   es `git clone` y su estructura normalmente se ve así:
+- Se utilizó las herramientas ya mencionadas para la elaboracion de la pagina solicitada.
 
-   ```bash
-   git clone https://github.com/<nombre-de-usuario>/freelancer.git
-   ```
+** IMAGEN DEL PRODUCTO FINAL**
 
-3. Cuando hayas terminado tu producto, envía un Pull Request a este repositorio
-   (puedes solicitar apoyo de tus profes para este paso).
-
-> Nota: No olvides que es una buena práctica describir tu proyecto en este
-> archivo `README.md` y también desplegar tu web a Github Pages :smiley:.
+![Sin titulo](assets/docs/resultado.png)
