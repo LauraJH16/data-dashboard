@@ -19,7 +19,10 @@
       <img src="assets/images/logo-laboratoria.svg" alt="logo-laboratoria">
       <div id="sidebar">
         <ul>
-          <li><img src="assets/images/user.png" alt="user-img"><p>User</p></li>
+          <li>
+            <img src="assets/images/user.png" alt="user-img">
+            <p>User</p>
+          </li>
           <li>Add Estudiante</li>
           <li>Remove Estudiante</li>
           <li>Add Sprint</li>
@@ -32,42 +35,31 @@
       </div>
     </section>
     <section id="second-section">
-        <div id="sede">
-          <a class = 'sede'href=""><i class="fa fa-map-marker" aria-hidden="true"></i>
-          SEDE
-          <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-          <ul class='menu-sedes'>
-            <li><a href="" value='AQP'>Arequipa</a>
-              <ul class="submenu-generation">
-                  <li><a href="">2016-2</a></li>
-                  <li><a href="">2017-1</a></li>
-                </ul>
-            </li>
-            <li><a href="" value='LIM'>Lima</a>
-              <ul class="submenu-generation">
-                  <li><a href="">2016-2</a></li>
-                  <li><a href="">2017-1</a></li>
-                  <li><a href="">2017-2</a></li>
-                </ul>
-            </li>
-            <li><a href="" value='SCL'>Santiago de Chile</a>
-              <ul class="submenu-generation">
-                  <li><a href="">2016-2</a></li>
-                  <li><a href="">2017-1</a></li>
-                  <li><a href="">2017-2</a></li>
-                </ul>
-            </li>
-						<li><a href="" value='CDMX'>Mexico D.F</a>
-							<ul class="submenu-generation">
-                  <li><a href="">2017-1</a></li>
-                  <li><a href="">2017-2</a></li>
-							</ul>
-						</li>
-					</ul>
-        </div>
-        <div class='sede-title'>
-          <p> Arequipa - 2015 - 1 generación</p>
-        </div>
+
+      <select name='all-sedes' id="sede">
+        <option>SEDES</option>
+        <optgroup label="Arequipa">
+          <option value='AQP2016-2'>2016-2</option>
+          <option value='AQP2017-1'>2017-1</option>
+        </optgroup>
+        <optgroup label="Lima">
+          <option value='LIM2016-2'>2016-2</option>
+          <option value='LIM2017-1'>2017-1</option>
+          <option value='LIM2017-2'>2017-2</option>
+        </optgroup>
+        <optgroup label="Santiago de Chile">
+          <option value='SCL2016-2'>2016-2</option>
+          <option value='SCL2017-1'>2017-1</option>
+          <option value='SCL2017-2'>2017-2</option>
+        </optgroup>
+        <optgroup label="Mexico DF">
+          <option value='CDMX2017-1'>2017-1</option>
+          <option value='CDMX2017-2'>2017-2</option>
+        </optgroup>
+      </select>
+      <div id='sede-title'>
+        <p> Sede: Arequipa - Generación: 2016-2</p>
+      </div>
       <nav>
         <ul>
           <li>
@@ -83,102 +75,142 @@
       </nav>
     </section>
   </header>
-  <main>
+  <div id='all-general' class="showTab">
     <section>
-        <h2>Estado</h2>
-        <img src="assets/images/bar-graph.png" alt="">
-      <div class="box">
-        <p>Activas</p>
-        <p id='activas'>7</p>
-      </div>
-      <div class="box">
-        <p>Desertoras</p>
-        <p id='desertoras'>53.3%</p>
+      <h2>ENROLLMENT</h2>
+      <!--<div id="piechart" style="width: 400px; height: 150px;"></div>-->
+      <img src="assets/images/circle-graphic.png" alt="">
+      <div class="box-box">
+        <div class="box">
+          <p># STUDENS CURRENTLY ENROLLED</p>
+          <p id='activas'>7</p>
+        </div>
+        <div class="box">
+          <p>% DROPOUT</p>
+          <p id='desertoras'>53.3%</p>
+        </div>
       </div>
     </section>
     <section>
-        <h2>Meta</h2>
-      <img src="assets/images/bar-graph.png" alt="">
-      <div class="box">
-        <p>#Yes</p>
-        <p id='goals'>7</p>
-      </div>
-      <div class="box">
-        <p>%Yes</p>
-        <p id='goalsPorc'>46.7%</p>
-      </div>
-    </section>
-    <section>
-      <img src="assets/images/bar-graph.png" alt="">
-      <div class="box">
-        <p id="prom-nps">64.8%</p>
-        <p>cumulative</p>
-      </div>
-      <div class="box">
-        <p id="promoter">promoters: 75.0%</p>
-        <p id="passive">passive: 14.8%</p>
-        <p id="detractor">detractors: 10.3%</p>
+      <h2>ACHIEVEMENT</h2>
+      <img src="assets/images/circle-graphic.png" alt="">
+      <div class="box-box">
+        <div class="box">
+          <p># STUDENTS THAT MEET THE TARGET</p>
+          <p id='goals'>7</p>
+        </div>
+        <div class="box">
+          <p>% OF TOTAL</p>
+          <p id='goalsPorc'>46.7%</p>
+        </div>
       </div>
     </section>
     <section>
-      <h2>HSE</h2>
+      <h2>NET PROMOTER SCORE</h2>
+      <img src="assets/images/circle-graphic.png" alt="">
+      <div class="box-box">
+        <div class="box">
+          <p>% CUMULATIVE NPS</p>
+          <p id="prom-nps">64.8%</p>
+        </div>
+        <div class="box">
+          <p id="promoter">promoters: 75.0%</p>
+          <p id="passive">passive: 14.8%</p>
+          <p id="detractor">detractors: 10.3%</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>LIFE SKILLS</h2>
       <select name="hse-sprint" id="hse-sprint">
         <option value="sprint-1">Sprint 1</option>
         <option value="sprint-2">Sprint 2</option>
         <option value="sprint-3">Sprint 3</option>
         <option value="sprint-4">Sprint 4</option>
       </select>
-      <img src="assets/images/bar-graph.png" alt="">
-      <div class="box">
-        <p>HSE</p>
-        <p id="skills-hse">5</p>
-      </div>
-      <div class="box">
-          <p>HSE%</p>
+      <img src="assets/images/circle-graphic.png" alt="">
+      <div class="box-box">
+        <div class="box">
+          <p># STUDENTS THAT MEET THE TARGET</p>
+          <p id="skills-hse">5</p>
+        </div>
+        <div class="box">
+          <p>% OF TOTAL</p>
           <p id="hse-percent">33.3%</p>
         </div>
+      </div>
     </section>
     <section>
-      <h2>Tecnico</h2>
+      <h2>TECH SKILLS</h2>
       <select name="tech-sprint" id="tech-sprint">
         <option value="sprint-1">Sprint 1</option>
         <option value="sprint-2">Sprint 2</option>
         <option value="sprint-3">Sprint 3</option>
         <option value="sprint-4">Sprint 4</option>
       </select>
-      <img src="assets/images/bar-graph.png" alt="">
-      <div class="box">
-        <p>Tecnico</p>
-        <p id='skills-tech'>4</p>
-      </div>
-      <div class="box">
-          <p>Tecnico%</p>
+      <img src="assets/images/circle-graphic.png" alt="">
+      <div class="box-box">
+        <div class="box">
+          <p># STUDENTS THAT MEET THE TARGET</p>
+          <p id='skills-tech'>4</p>
+        </div>
+        <div class="box">
+          <p>% OF TOTAL</p>
           <p id="tech-percent">26.7%</p>
         </div>
-    </section>
-    <section>
-      <img src="assets/images/bar-graph.png" alt="">
-      <div class="box">
-        <p>Expectativa</p>
-        <p id="satisfaction-percent">87.8%</p>
       </div>
     </section>
     <section>
-      <img src="assets/images/bar-graph.png" alt="">
-      <div class="box">
-        <p>Teacher</p>
-        <p id="teacher">3.6</p>
+      <h2>STUDENT SATISFACTION</h2>
+      <img src="assets/images/circle-graphic.png" alt="">
+      <div class="box-box">
+        <div class="box satis">
+          <p>% MEETING OR EXCEEDING EXPECTATIONS (CUMULATIVE)</p>
+          <p id="satisfaction-percent">87.8%</p>
+        </div>
       </div>
     </section>
     <section>
-      <img src="assets/images/bar-graph.png" alt="">
-      <div class="box">
-        <p>Jedi</p>
-        <p id="jedi">4.0</p>
+      <h2>TEACHER RATING</h2>
+      <img src="assets/images/circle-graphic.png" alt="">
+      <div class="box-box">
+        <div class="box">
+          <p>OVERALL TEACHER RATING (CUMULATIVE)</p>
+          <p id="teacher">3.6</p>
+        </div>
       </div>
     </section>
-  </main>
+    <section>
+      <h2>JEDI MASTER RATING</h2>
+      <img src="assets/images/circle-graphic.png" alt="">
+      <div class="box-box">
+        <div class="box">
+          <p>OVERALL JEDI RATING (CUMULATIVE)</p>
+          <p id="jedi">4.0</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="all-students" class="showTab hideTab">
+    <section>
+      <!--<h2>DIANA NAVARRO</h2>
+            <p class="front">Frontend Developer</p>
+            <img src="" alt="foto de estudiante">
+            <div class="point-all">
+            <div class="box-pointtech">
+              <p>Técnico</p>
+              <p>90%</p>
+            </div>
+            <div class="box-pointhse">
+              <p>Hse</p>
+              <p>90%</p>
+            </div>
+          </div>-->
+    </section>
+  </div>
 
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <!-- Base de datos -->
   <script src="./js/data.js"></script>
   <!-- Aquí va tus archivos JS -->
