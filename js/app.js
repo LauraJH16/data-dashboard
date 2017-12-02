@@ -131,10 +131,14 @@ window.addEventListener('click', function() {
 
   // FinSelect
 
+  // Declaramos las variables para reutilazarlas en todas las funciones
   var sedes = data[selectSede()[0]];
   var generation = sedes[selectSede()[1]];
   var students = generation['students'];
   var ratings = generation.ratings;
+  // Fin de variables reutilizables
+
+  // LLamar las funciones y colocarlas en el HTML
   var boxActivas = document.getElementById('activas');
   boxActivas.textContent = active();
   var boxDesactive = document.getElementById('desertoras');
@@ -146,11 +150,11 @@ window.addEventListener('click', function() {
   var boxNps = document.getElementById('prom-nps');
   boxNps.textContent = npsProm().toFixed(1) + '%';
   var boxPromoter = document.getElementById('promoter');
-  boxPromoter.textContent = 'promoters: ' + promoterNps().toFixed(1) + '%';
+  boxPromoter.textContent = 'promoters: ' + ((promoterNps() / ratings.length) * 100).toFixed(1) + '%';
   var boxPassive = document.getElementById('passive');
-  boxPassive.textContent = 'passive: ' + passiveNps().toFixed(1) + '%';
+  boxPassive.textContent = 'passive: ' + ((promoterNps() / ratings.length) * 100).toFixed(1) + '%';
   var boxDetractor = document.getElementById('detractor');
-  boxDetractor.textContent = 'detractors: ' + detractorNps().toFixed(1) + '%';
+  boxDetractor.textContent = 'detractors: ' + ((promoterNps() / ratings.length) * 100).toFixed(1) + '%';
   var selectSprintTech = document.getElementById('tech-sprint');
   var boxTech = document.getElementById('skills-tech');
   var boxPercentTech = document.getElementById('tech-percent');
@@ -196,83 +200,87 @@ window.addEventListener('click', function() {
   var teacherPoints = document.getElementById('teacher');
   teacherPoints.textContent = pointsTeacher().toFixed(1);
   studentPerfil();
+  // Fin de llamar funciones
 
+  // Funcion para saber el # de estudiantes activas
   function active() {
-    var studentActive = 0;
-    for (var i = 0; i < students.length; i++) {
-      if (students[i]['active'])
-        studentActive++;
+    var studentActive = 0; // Declaramos la varible que va a acumular inicializadas en 0
+    for (var i = 0; i < students.length; i++) { // Recorremos la cantidad de estudiantes 
+      if (students[i]['active']) // Condicion para saber si esta activa o no
+        studentActive++; // Se va acumulando de acuerdo a la condicion anterior
     }
-    return studentActive;
+    return studentActive; // Retorna la variable
   }
 
+  // Funcion para saber el % de estudiantes que desertaron
   function deserter() {
-    var studentDesert = 0;
-    for (var i = 0; i < students.length; i++) {
-      if (!students[i]['active']) 
-        studentDesert++;
+    var studentDesert = 0; // Declaramos la variable que va a acumular inicializada en 0
+    for (var i = 0; i < students.length; i++) { // Recorremos el numero de estudiantes 
+      if (!students[i]['active']) // Condicion para saber si esta activa o no
+        studentDesert++; // Se va acumulando de acuerdo a la condicion anterior
     }
-    return studentDesert;
+    return studentDesert; // Retorna la variable
   }
 
+  // Funcion para saber el # de estudiantes que alcanzaron la meta
   function goals() {
-    var studentsGoals = [];
-    var goalAchieved = 0, pointsTech = 0, pointsHse = 0;
-    for (var i = 0; i < students.length; i++) {
-      for (var j = 0; j < students[i]['sprints'].length; j++) {
-        pointsTech += students[i].sprints[j].score.tech;
-        pointsHse += students[i].sprints[j].score.hse;
+    var studentsGoals = []; // Declaramos una variable con un array vacio
+    var goalAchieved = 0, pointsTech = 0, pointsHse = 0; // Declaramos 3 variables que acumulan inicializadas en 0
+    for (var i = 0; i < students.length; i++) { // Recorremos la cantidad de estudiantes 
+      for (var j = 0; j < students[i]['sprints'].length; j++) { // Recorremos el numero de sprints
+        pointsTech += students[i].sprints[j].score.tech; // Se va acumulando la cantidad de tech
+        pointsHse += students[i].sprints[j].score.hse; // Se va acumulando la cantidad de tech 
       }
-      var promTech = pointsTech / students[i]['sprints'].length;
-      var promHse = pointsHse / students[i]['sprints'].length;
-      var promTotal = promTech + promHse;
-      studentsGoals.push([promTotal]);
+      var promTech = pointsTech / students[i]['sprints'].length; // Dividimos los puntos de tech acumulados con la cantidad de sprints
+      var promHse = pointsHse / students[i]['sprints'].length; // Dividimos los puntos de hse acumulados con la cantidad de sprints
+      var promTotal = promTech + promHse; // Se halla el promedio total sumando el promedio de tech y hse
+      studentsGoals.push([promTotal]); // Lo agregamos uno a uno en el array
     }
-    for (var k = 0; k < studentsGoals.length; k++) {
-      if (studentsGoals[k] >= 2100)
-        goalAchieved++;
+    for (var k = 0; k < studentsGoals.length; k++) { // Recorremos el array
+      if (studentsGoals[k] >= 2100) // Condición para saber si llegó al promedio
+        goalAchieved++; // Se va acumulando de acuerdo a la condicion anterior
     }
-    return goalAchieved;
+    return goalAchieved; // Retorna la variable
   }
 
+  // Funcion para saber el % del promedio de NPS
   function npsProm() {
-    var nps = 0;
-    var promNps = 0;
-    for (var i = 0; i < ratings.length; i++) {
-      nps += generation.ratings[i].nps.promoters - generation.ratings[i].nps.detractors;
+    var nps, promNps = 0; // Declaramos las variables que va a acumular inicializadas en 0
+    for (var i = 0; i < ratings.length; i++) { // Recorremos el numero de sprints
+      nps += generation.ratings[i].nps.promoters - generation.ratings[i].nps.detractors; // Acumulamos la resta entre promotores y detractores
     }
-    promNps = nps / ratings.length;
-    return promNps;
+    promNps = nps / ratings.length; // Dividimos el resultado anterior con el numero de sprints
+    return promNps; // Retorna la variable
   }
 
+  // Funcion para saber el % del promedio de promotores
   function promoterNps() {
-    var promotersPercent = 0;
-    for (i = 0; i < ratings.length; i++) {
-      var totalNps = ratings[i].nps.promoters + ratings[i].nps.passive + ratings[i].nps.detractors;
-      promotersPercent += ((ratings[i].nps.promoters) / totalNps) * 100;
+    var promotersPercent = 0; // Declaramos la variable inicializada en 0
+    for (i = 0; i < ratings.length; i++) { // Recorremos el numero de sprints
+      var totalNps = ratings[i].nps.promoters + ratings[i].nps.passive + ratings[i].nps.detractors; // Total de nps
+      promotersPercent += (ratings[i].nps.promoters) / totalNps; // Acumulamos la division de los promotores con total nps
     }
-    var promPromotersPercent = promotersPercent / ratings.length;
-    return promPromotersPercent;
+    return promotersPercent; // Retornamos la variable
   }
 
+  // Funcion para saber el % del promedio de pasivos
   function passiveNps() {
-    var passivePercent = 0;
-    for (i = 0; i < ratings.length; i++) {
-      var totalNps = ratings[i].nps.promoters + ratings[i].nps.passive + ratings[i].nps.detractors;
-      passivePercent += ((ratings[i].nps.passive) / totalNps) * 100;
+    var passivePercent = 0; // Declaramos la variable inicializada en 0
+    for (i = 0; i < ratings.length; i++) { // Recorremos el numero de sprints
+      var totalNps = ratings[i].nps.promoters + ratings[i].nps.passive + ratings[i].nps.detractors; // Total de nps
+      passivePercent += (ratings[i].nps.passive) / totalNps; // Acumulamos la division de los pasivos con total nps
     }
-    var promPassivePercent = passivePercent / ratings.length;
-    return promPassivePercent;
+    return promPassivePercent; // Retornamos la variable
   }
 
-  function detractorNps() {
-    var detractorPercent = 0;
-    for (i = 0; i < ratings.length; i++) {
-      var totalNps = ratings[i].nps.promoters + ratings[i].nps.passive + ratings[i].nps.detractors;
-      detractorPercent += ((ratings[i].nps.detractors) / totalNps) * 100;
+  // Funcion para saber el % del promedio de detractores
+  function detractorNps() { 
+    var detractorPercent = 0; // Declaramos la variable inicializada en 0
+    for (i = 0; i < ratings.length; i++) { // Recorremos el numero de sprints
+      var totalNps = ratings[i].nps.promoters + ratings[i].nps.passive + ratings[i].nps.detractors; // Total de nps
+      detractorPercent += (ratings[i].nps.detractors) / totalNps; // Acumulamos la division de los detractores con total nps
     }
-    var promDetractorPercent = detractorPercent / ratings.length;
-    return promDetractorPercent;
+    return promDetractorPercent; // Retornamos la variable
   }
 
   function skillsTech() {
