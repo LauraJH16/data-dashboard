@@ -200,9 +200,8 @@ window.addEventListener('click', function() {
   function active() {
     var studentActive = 0;
     for (var i = 0; i < students.length; i++) {
-      if (students[i]['active']) {
+      if (students[i]['active'])
         studentActive++;
-      }
     }
     return studentActive;
   }
@@ -210,9 +209,8 @@ window.addEventListener('click', function() {
   function deserter() {
     var studentDesert = 0;
     for (var i = 0; i < students.length; i++) {
-      if (!students[i]['active']) {
+      if (!students[i]['active']) 
         studentDesert++;
-      }
     }
     return studentDesert;
   }
@@ -231,9 +229,8 @@ window.addEventListener('click', function() {
       studentsGoals.push([promTotal]);
     }
     for (var k = 0; k < studentsGoals.length; k++) {
-      if (studentsGoals[k] >= 2100) {
+      if (studentsGoals[k] >= 2100)
         goalAchieved++;
-      }
     }
     return goalAchieved;
   }
